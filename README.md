@@ -13,7 +13,7 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 **IPS (Instant Ping System)** is a compact hardware-software project that allows you to send an instant Telegram message by pressing a physical button.  
 Perfect for:
@@ -25,10 +25,10 @@ Perfect for:
 
 ---
 
-## 📸 Demo
+## Demo
 
 <p align="center">
-  <img src="ips_pic.jpg">
+  <img src="ips_pic.jpg" width="500">
 </p>
 
 ---
@@ -36,7 +36,7 @@ Perfect for:
 ## 📡 How It Works
 
 
-[Button Pressed] --> [ESP8266 Connects Wi-Fi] --> [Sends HTTP Request] --> [PHP Server Calls Telegram Bot API] --> [Message Delivered in Telegram]
+[ESP8266 Connects Wi-Fi] --> [Button Pressed] --> [Sends HTTP Request] --> [PHP Server Calls Telegram Bot API] --> [Message Delivered in Telegram]
 
 
 The ESP8266 sends an HTTP request to a PHP server (hosted on Render or Replit), and the server uses the Telegram Bot API to deliver the message to the specified chat.
@@ -64,8 +64,6 @@ The ESP8266 sends an HTTP request to a PHP server (hosted on Render or Replit), 
 
 5. **Check your Telegram app**:  
    - The message like `🔔 Farnaz NEED HELP!!` should appear instantly in the chat you specified.
-
-     ###  Message sent example (Serial Monitor output):
 
   <img src="mes.jpg" width="300">
 
