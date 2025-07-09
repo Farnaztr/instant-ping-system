@@ -65,7 +65,7 @@ The ESP8266 sends an HTTP request to a PHP server (hosted on Render or Replit), 
 5. **Check your Telegram app**:  
    - The message like `🔔 Farnaz NEED HELP!!` should appear instantly in the chat you specified.
 <p align="center">
-  <img src="mes.jpg">
+  <img src="mes.jpg" width="400">
 </p>
 
 ---
