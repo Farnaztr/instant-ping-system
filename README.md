@@ -15,99 +15,108 @@
 
 ## Overview
 
-**IPS (Instant Ping System)** is a compact hardware-software project that allows you to send an instant Telegram message by pressing a physical button.  
-Perfect for:
-
-- 🔴 Emergency alert systems  
-- 🧓 Elder assistance at home  
-- 🏢 Panic buttons in offices or labs  
-- 👨‍🔧 Maker projects & IoT experimentation
+**IPS (Instant Ping System)** is a simple and effective emergency alert system based on ESP8266.  
+By pressing a physical button, the system sends an instant alert message to a specified Telegram chat via a PHP server.  
+This project is ideal for personal safety, elder assistance, panic buttons in offices, and IoT beginners.
 
 ---
 
 ## Demo
 
 <p align="center">
-  <img src="ips_pic.jpg" width="500">
+  <img src="ips_pic.jpg" width="500" alt="IPS Demo">
 </p>
 
 ---
 
 ## 📡 How It Works
 
-
 [ESP8266 Connects Wi-Fi] --> [Button Pressed] --> [Sends HTTP Request] --> [PHP Server Calls Telegram Bot API] --> [Message Delivered in Telegram]
 
+markdown
+Copy
+Edit
 
-The ESP8266 sends an HTTP request to a PHP server (hosted on Render or Replit), and the server uses the Telegram Bot API to deliver the message to the specified chat.
+The ESP8266 sends an HTTP GET request to a PHP server (hosted on Render or Replit), which then forwards the message to Telegram using the Bot API.
 
 ---
 
-## 🚀 How to Use
+## Usage
 
-1. **Setup your hardware:**
+1. **Hardware Setup**  
    - Connect the push button to the ESP8266 as follows:  
      - One side of the button to GPIO D5 (GPIO14)  
      - The other side to GND  
-   - Use `INPUT_PULLUP` mode for the button pin in the code to avoid external resistors.
+   - Use `INPUT_PULLUP` mode in the code to enable internal pull-up resistor.
 
-2. **Configure your software:**
-   - Flash the ESP8266 code with your Wi-Fi SSID and password.  
-   - Make sure the `serverName` points to your hosted PHP server URL that forwards the message to Telegram.
+2. **Software Configuration**  
+   - Flash the ESP8266 code after updating:  
+     ```cpp
+     const char* ssid = "YOUR_WIFI_SSID";
+     const char* password = "YOUR_WIFI_PASSWORD";
+     const char* serverName = "https://your-server-url.com";
+     ```
+   - Make sure your PHP server is running and accessible.
 
-3. **Power on the ESP8266** and ensure it connects to your Wi-Fi network.  
-   - Open the Serial Monitor at 115200 baud rate to see status messages.
+3. **Power On and Connect**  
+   - Power on the ESP8266; it will connect to your Wi-Fi network.  
+   - Open the Serial Monitor (115200 baud) to check connection status.
 
-4. **Press the button**:  
-   - When the button is pressed, the ESP8266 will send an HTTP GET request to your PHP server.  
-   - The PHP server will use the Telegram Bot API to send a predefined alert message to your Telegram chat.
+4. **Press the Button**  
+   - When pressed, the ESP8266 sends a request to the PHP server.  
+   - The server uses Telegram Bot API to send the alert message to your chat.
 
-5. **Check your Telegram app**:  
-   - The message like `🔔 Farnaz NEED HELP!!` should appear instantly in the chat you specified.
+5. **Check Telegram**  
+   - The alert message (e.g. `🔔 Farnaz NEED HELP!!`) should appear immediately.
 
-  <img src="mes.jpg" width="300">
-
+<img src="mes.jpg" width="300" alt="Telegram message example">
 
 ---
 
+## Hardware Components
 
+| Component       | Description                 |
+|-----------------|-----------------------------|
+| ESP8266 Board   | NodeMCU (ESP-12E)           |
+| Push Button     | Momentary tactile switch    |
+| Jumper Wires    | For connections             |
+| Breadboard      | For prototyping             |
+| Wi-Fi Network   | Required for connectivity   |
 
-## 🔧 Hardware
-
-| Component       | Description                  |
-|----------------|------------------------------|
-| ESP8266 Board  | We used NodeMCU (ESP-12E)     |
-| Push Button    | Momentary tactile switch      |
-| Jumper Wires   | For connections               |
-| Breadboard     | For quick prototyping         |
-| Wi-Fi Network  | Required for connectivity     |
-
-### 🔌 Circuit Diagram
+### Circuit Diagram
 
 [Button] -----> [D5 (GPIO14)]
 [Button] -----> [GND]
 
-> *Use INPUT_PULLUP to avoid external resistor.*
+yaml
+Copy
+Edit
+
+> Use `INPUT_PULLUP` to avoid external resistor.
 
 ---
 
-## 💻 Software Setup
+## Software Setup
 
-### 🧠 ESP8266 Code
+### Prerequisites
 
-1. Open Arduino IDE.
-2. Install `ESP8266 Board` from Board Manager.
-3. Install `ESP8266HTTPClient.h` and `WiFiClientSecure.h`.
-4. Flash the code from [`ips.ino`](ips.ino) to your board.
+- Arduino IDE installed  
+- ESP8266 board package installed via Board Manager  
+- Libraries: `ESP8266HTTPClient.h`, `WiFiClientSecure.h`
 
-🛑 **Do NOT include real credentials in public repositories!**
+### Flashing Code
 
-```cpp
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* serverName = "https://your-server-url.com";
-```
+- Open the [`ips.ino`](ips.ino) file from this repo  
+- Update Wi-Fi credentials and server URL  
+- Upload to your ESP8266 board
+
+🛑 **Security Warning:**  
+**Do NOT commit your real Wi-Fi credentials or bot tokens to public repositories!** Use environment variables or config files ignored by Git.
+
+---
 
 ## Credits
 
-Made by Farnaz Tarabi
+Made with ❤️ by Farnaz Tarabi
+
+---
