@@ -6,8 +6,8 @@
 *A Wi-Fi-enabled emergency alert button using ESP8266 and Telegram*
 
 [![Platform](https://img.shields.io/badge/platform-ESP8266-pink.svg)](#hardware)
-[![Built With](https://img.shields.io/badge/built%20with-C++-informational)](https://www.arduino.cc/)
-[![Telegram](https://img.shields.io/badge/telegram-bot-blue)](https://telegram.org/)
+[![Built With](https://img.shields.io/badge/built%20with-C++-purple.svg)](https://www.arduino.cc/)
+[![Telegram](https://img.shields.io/badge/telegram-bot-blue.svg)](https://telegram.org/)
 
 </div>
 
