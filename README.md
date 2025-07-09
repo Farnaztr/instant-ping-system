@@ -43,6 +43,36 @@ The ESP8266 sends an HTTP request to a PHP server (hosted on Render or Replit), 
 
 ---
 
+## 🚀 How to Use
+
+1. **Setup your hardware:**
+   - Connect the push button to the ESP8266 as follows:  
+     - One side of the button to GPIO D5 (GPIO14)  
+     - The other side to GND  
+   - Use `INPUT_PULLUP` mode for the button pin in the code to avoid external resistors.
+
+2. **Configure your software:**
+   - Flash the ESP8266 code with your Wi-Fi SSID and password.  
+   - Make sure the `serverName` points to your hosted PHP server URL that forwards the message to Telegram.
+
+3. **Power on the ESP8266** and ensure it connects to your Wi-Fi network.  
+   - Open the Serial Monitor at 115200 baud rate to see status messages.
+
+4. **Press the button**:  
+   - When the button is pressed, the ESP8266 will send an HTTP GET request to your PHP server.  
+   - The PHP server will use the Telegram Bot API to send a predefined alert message to your Telegram chat.
+
+5. **Check your Telegram app**:  
+   - The message like `🔔 Farnaz NEED HELP!!` should appear instantly in the chat you specified.
+<p align="center">
+  <img src="">
+</p>
+
+---
+
+### 🔔 Message sent example (Serial Monitor output):
+
+
 ## 🔧 Hardware
 
 | Component       | Description                  |
