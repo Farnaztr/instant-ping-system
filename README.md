@@ -17,25 +17,27 @@
 
 **IPS (Instant Ping System)** is a simple and effective emergency alert system based on ESP8266.  
 By pressing a physical button, the system sends an instant alert message to a specified Telegram chat via a PHP server.  
-This project is ideal for personal safety, elder assistance, panic buttons in offices, and IoT beginners.
+Perfect for:
+
+- 🔴 Emergency alert systems  
+- 🧓 Elder assistance at home  
+- 🏢 Panic buttons in offices or labs  
+- 👨‍🔧 Maker projects & IoT experimentation
 
 ---
 
 ## Demo
 
 <p align="center">
-  <img src="ips_pic.jpg" width="500" alt="IPS Demo">
+  <img src="ips_pic.jpg" width="750" alt="IPS Demo">
 </p>
 
 ---
 
-## 📡 How It Works
+## How It Works
 
 [ESP8266 Connects Wi-Fi] --> [Button Pressed] --> [Sends HTTP Request] --> [PHP Server Calls Telegram Bot API] --> [Message Delivered in Telegram]
 
-markdown
-Copy
-Edit
 
 The ESP8266 sends an HTTP GET request to a PHP server (hosted on Render or Replit), which then forwards the message to Telegram using the Bot API.
 
@@ -88,10 +90,6 @@ The ESP8266 sends an HTTP GET request to a PHP server (hosted on Render or Repli
 [Button] -----> [D5 (GPIO14)]
 [Button] -----> [GND]
 
-yaml
-Copy
-Edit
-
 > Use `INPUT_PULLUP` to avoid external resistor.
 
 ---
@@ -117,6 +115,5 @@ Edit
 
 ## Credits
 
-Made with ❤️ by Farnaz Tarabi
+Made by Farnaz Tarabi𓆩♡𓆪
 
----
