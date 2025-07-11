@@ -115,5 +115,5 @@ The ESP8266 sends an HTTP GET request to a PHP server (hosted on Render or Repli
 
 ## Credits
 
-Made by Farnaz Tarabi𓆩♡𓆪
+Made by Farnaz𓆩♡𓆪
 
