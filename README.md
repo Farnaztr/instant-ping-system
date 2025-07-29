@@ -10,6 +10,7 @@
 [![Telegram](https://img.shields.io/badge/telegram-bot-blue.svg)](https://telegram.org/)
   <img src="https://img.shields.io/github/stars/farnaztr/instant-ping-system?style=social" />
 
+</div>
 
 ---
 
