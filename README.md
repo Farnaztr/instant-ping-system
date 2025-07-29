@@ -11,8 +11,6 @@
   <img src="https://img.shields.io/github/stars/farnaztr/instant-ping-system?style=social" />
 
 
-</div>
-
 ---
 
 ## Overview
