@@ -112,6 +112,7 @@ The ESP8266 sends an HTTP GET request to a PHP server (hosted on Render or Repli
 🛑 **Security Warning:**  
 **Do NOT commit your real Wi-Fi credentials or bot tokens to public repositories!** Use environment variables or config files ignored by Git.
 
+
 ---
 
 ## Credits
